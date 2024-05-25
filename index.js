@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb://127.0.0.1:27017/bookrack");
+mongoose.connect("mongodb+srv://niteshyadav2107:nitesh123@bookrack.xuaa9t4.mongodb.net/bookrack?retryWrites=true&w=majority&appName=bookrack");
 
 app.post('/login', (req,res) => {
 const{enteredEmail, enteredPassword} = req.body;
@@ -32,6 +32,6 @@ BookModel.create(req.body)
 .catch(err => res.json(err))
 })
 
-app.listen(3001, () => {
+app.listen(3002, () => {
     console.log("server is running")
 })
